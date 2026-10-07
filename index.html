@@ -1,10 +1,675 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Vibhati Digital</title>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Vibhati Digital — Digital services, online assistance and technology solutions. Coming soon."
+  />
+
+  <meta name="theme-color" content="#071321" />
+
+  <title>Vibhati Digital | Coming Soon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #318cff;
+      --blue-light: #72bcff;
+      --orange: #ff8a3d;
+      --white: #ffffff;
+      --text: #f5f8fc;
+      --muted: #9eafc2;
+      --background: #06101c;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow-x: hidden;
+
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(49, 140, 255, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 12% 85%,
+          rgba(255, 138, 61, 0.10),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #040a12 0%,
+          #06101c 45%,
+          #0a1828 100%
+        );
+    }
+
+    /* Decorative background */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 520px;
+      height: 520px;
+
+      top: -300px;
+      right: -180px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(114, 188, 255, 0.09);
+
+      box-shadow:
+        0 0 0 70px rgba(114, 188, 255, 0.025),
+        0 0 0 140px rgba(114, 188, 255, 0.015);
+
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+
+      width: 420px;
+      height: 420px;
+
+      left: -300px;
+      bottom: -240px;
+
+      border-radius: 50%;
+      background: rgba(255, 138, 61, 0.035);
+      filter: blur(10px);
+
+      pointer-events: none;
+    }
+
+    /* Full screen layout */
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      flex-direction: column;
+
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Top branding */
+    .top {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 30px 5vw;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #ffffff;
+      border-radius: 14px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-location {
+      margin-top: 2px;
+
+      color: #708398;
+
+      font-size: 11px;
+      letter-spacing: 0.7px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #a6e7c5;
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #55d69a;
+
+      box-shadow:
+        0 0 8px #55d69a,
+        0 0 18px rgba(85, 214, 154, 0.35);
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 50px 5vw 70px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 950px;
+
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 14px;
+
+      border: 1px solid rgba(85, 214, 154, 0.18);
+      border-radius: 100px;
+
+      background: rgba(85, 214, 154, 0.045);
+
+      color: #9de4c0;
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-line {
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background: #55d69a;
+
+      box-shadow: 0 0 10px #55d69a;
+    }
+
+    h1 {
+      margin-top: 28px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(
+        48px,
+        7.2vw,
+        92px
+      );
+
+      line-height: 0.98;
+
+      letter-spacing: -4.5px;
+    }
+
+    h1 .gradient {
+      background:
+        linear-gradient(
+          100deg,
+          #ffffff 15%,
+          #75bdff 55%,
+          #ff9959 90%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .description {
+      max-width: 690px;
+
+      margin: 28px auto 0;
+
+      color: var(--muted);
+
+      font-size: clamp(15px, 1.5vw, 18px);
+
+      line-height: 1.85;
+    }
+
+    .description strong {
+      color: #eaf1f8;
+      font-weight: 600;
+    }
+
+    /* Services mini-line */
+    .services {
+      margin-top: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-wrap: wrap;
+      gap: 9px;
+
+      color: #75889c;
+
+      font-size: 12px;
+    }
+
+    .services span {
+      color: #c0cedd;
+      font-weight: 600;
+    }
+
+    .services i {
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: #40556c;
+    }
+
+    /* CTA */
+    .actions {
+      margin-top: 36px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      padding: 14px 21px;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(93, 171, 255, 0.3);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(49, 140, 255, 0.20),
+          rgba(49, 140, 255, 0.07)
+        );
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+
+      border-color: rgba(93, 171, 255, 0.6);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(49, 140, 255, 0.30),
+          rgba(255, 138, 61, 0.10)
+        );
+    }
+
+    .arrow {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    /* Bottom */
+    .bottom {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 22px 5vw;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.055);
+
+      color: #53677d;
+
+      font-size: 11px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .bottom-right {
+      color: #71849a;
+    }
+
+    /* Tablet */
+    @media (max-width: 800px) {
+      .top {
+        padding: 24px 4vw;
+      }
+
+      .main {
+        padding: 45px 4vw 60px;
+      }
+
+      .bottom {
+        padding: 20px 4vw;
+      }
+
+      .status {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 560px) {
+      .page {
+        min-height: 100svh;
+      }
+
+      .top {
+        padding: 20px 18px;
+      }
+
+      .brand-logo {
+        width: 49px;
+        height: 49px;
+        border-radius: 12px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .brand-location {
+        font-size: 9px;
+      }
+
+      .main {
+        padding: 35px 18px 45px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.1px;
+      }
+
+      h1 {
+        margin-top: 23px;
+
+        font-size: clamp(44px, 13vw, 62px);
+
+        letter-spacing: -2.8px;
+      }
+
+      .description {
+        margin-top: 23px;
+
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .services {
+        margin-top: 23px;
+        font-size: 10px;
+      }
+
+      .actions {
+        margin-top: 29px;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 270px;
+      }
+
+      .bottom {
+        padding: 17px 18px;
+
+        flex-direction: column;
+        gap: 5px;
+
+        text-align: center;
+
+        font-size: 9px;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-height: 700px) and (min-width: 561px) {
+      .top {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      .main {
+        padding-top: 25px;
+        padding-bottom: 30px;
+      }
+
+      h1 {
+        margin-top: 18px;
+        font-size: clamp(45px, 6vw, 70px);
+      }
+
+      .description {
+        margin-top: 18px;
+      }
+
+      .actions {
+        margin-top: 25px;
+      }
+
+      .bottom {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Vibhati Digital</h1>
-  <p>Website coming soon.</p>
+
+  <div class="page">
+
+    <!-- Top branding -->
+    <header class="top">
+
+      <div class="brand">
+
+        <div class="brand-logo">
+          <img
+            src="./vibhati-logo-mark.png"
+            alt="Vibhati Digital Logo"
+          >
+        </div>
+
+        <div>
+          <div class="brand-name">
+            Vibhati Digital
+          </div>
+
+          <div class="brand-location">
+            Jawakheda Bk · Kannad · Maharashtra
+          </div>
+        </div>
+
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Coming Soon
+      </div>
+
+    </header>
+
+
+    <!-- Main content -->
+    <main class="main">
+
+      <div class="content">
+
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          Our digital platform is being prepared
+        </div>
+
+
+        <h1>
+          Digital services,<br>
+          <span class="gradient">
+            made simpler.
+          </span>
+        </h1>
+
+
+        <p class="description">
+          The full <strong>Vibhati Digital</strong> portal is on its way.
+          We're building a trusted platform for
+          <strong>online services, digital assistance and technology solutions</strong>
+          for individuals, businesses and the community.
+        </p>
+
+
+        <div class="services">
+          <span>Online Services</span>
+          <i></i>
+          <span>Digital Assistance</span>
+          <i></i>
+          <span>Technology Solutions</span>
+        </div>
+
+
+        <div class="actions">
+
+          <a
+            class="button"
+            href="https://vijayshikhare.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit VijayShikhare.com
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bottom">
+
+      <div>
+        © 2026 Vibhati Digital
+      </div>
+
+      <div class="bottom-right">
+        A digital initiative by Vijay Shikhare
+      </div>
+
+    </footer>
+
+  </div>
+
 </body>
 </html>
